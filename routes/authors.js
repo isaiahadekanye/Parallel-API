@@ -3,8 +3,8 @@ const router = express.Router();
 const request = require("request");
 const async = require('async');
 
-let apiUrl = 'https://hatchways.io/api/assessment/blog/posts';
-let apiUrlAuthors = 'https://hatchways.io/api/assessment/blog/authors';
+let apiUrl = '';
+let apiUrlAuthors = '';
 
 router.get("/", async (req, res) => {
     const links = [apiUrl, apiUrlAuthors];

@@ -3,7 +3,7 @@ const router = express.Router();
 const request = require("request");
 const async = require('async');
 
-let apiUrl = 'https://hatchways.io/api/assessment/blog/posts';
+let apiUrl = '';
 
 const error = [{
     "error": "Tag parameter is required"
