@@ -45,33 +45,9 @@ router.get("/", async (req, res) => {
         }
 
         if (directionIndividual === "desc") {
-            switch (sortByIndividual) {
-                case "id":
-                    final.sort((a, b) => b.id - a.id);
-                    break;
-                case "reads":
-                    final.sort((a, b) => b.reads - a.reads);
-                    break;
-                case "likes":
-                    final.sort((a, b) => b.likes - a.likes);
-                    break;
-                case "popularity":
-                    final.sort((a, b) => b.popularity - a.popularity);
-            }
+            final.sort((a, b) => b[sortByIndividual] - a[sortByIndividual]);
         } else {
-            switch (sortByIndividual) {
-                case "id":
-                    final.sort((a, b) => a.id - b.id);
-                    break;
-                case "reads":
-                    final.sort((a, b) => a.reads - b.reads);
-                    break;
-                case "likes":
-                    final.sort((a, b) => a.likes - b.likes);
-                    break;
-                case "popularity":
-                    final.sort((a, b) => a.popularity - b.popularity);
-            }
+            final.sort((a, b) => a[sortByIndividual] - b[sortByIndividual]);
         }
 
         res.send(final);
